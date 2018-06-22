@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rm -rf [1-9]*
+
+rm -rf processor*

@@ -1,0 +1,4 @@
+rm *.msh 
+gmsh - cylinder3.geo
+gmshToFoam cylinder.msh
+changeDictionary

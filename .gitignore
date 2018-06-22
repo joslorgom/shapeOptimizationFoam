@@ -1,0 +1,13 @@
+linux64*
+*.o
+*.C.dev
+dynamicCode*
+*.log
+*.msh
+*.csv
+processor*
+pos*
+*.OpenFOAM
+polyMesh
+0.*
+[1-9]*
