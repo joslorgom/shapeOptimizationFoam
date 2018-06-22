@@ -35,9 +35,9 @@
 	// loop over points to move the nodes
 	forAll(dispVals, index)
 	{
-	    dispVals[index].x() = PointPointer[index].x() - 1e-5 * faceValues[index] * PointNormalVector[index].x();
-            dispVals[index].y() = PointPointer[index].y() - 1e-5 * faceValues[index] * PointNormalVector[index].y();
-            dispVals[index].z() = PointPointer[index].z() - 1e-5 * faceValues[index] * PointNormalVector[index].z();
+	    dispVals[index].x() = PointPointer[index].x() - gamma * faceValues[index] * PointNormalVector[index].x();
+            dispVals[index].y() = PointPointer[index].y() - gamma * faceValues[index] * PointNormalVector[index].y();
+            dispVals[index].z() = PointPointer[index].z() - gamma * faceValues[index] * PointNormalVector[index].z();
 	}
 
 	PointDisplacement.boundaryFieldRef()[patchID] == dispVals;

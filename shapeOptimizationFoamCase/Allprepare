@@ -1,4 +1,7 @@
 rm *.msh 
-gmsh - cylinder3.geo
+gmsh - cylinder5.geo
 gmshToFoam cylinder.msh
 changeDictionary
+
+#topoSet -dict system/topoSetDict
+#refineMesh -dict system/refineMeshDict -overwrite
