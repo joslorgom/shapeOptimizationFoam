@@ -62,6 +62,14 @@ and the cost function descreases by choosing the normal displacement to the cont
     <img src="https://latex.codecogs.com/gif.latex?%5Cdelta%20%5Ctheta%20%5E%7B%5Cleft%28n%5Cright%29%7D%20%3D%20-%20%5Cleft%5B%20r%5E%7B%5Cleft%28n%5Cright%29%7D%20-%202%20%5Cnu%20S_%7Bij%7D%20%5Cleft%28%20%5Cmathbf%7Bv%7D%5E%7B%5Cleft%28n%5Cright%29%7D%20%5Cright%29%20%5C%2C%20n_j%5E%7B%5Cleft%28n%5Cright%29%7D%20%5C%20n_k%5E%7B%5Cleft%28n%5Cright%29%7D%20%5C%2C%20%5Cpartial_k%20u_i%5E%7B%5Cleft%28n%5Cright%29%7D%20%5Cright%5D.">
 </p>
 
+Hence,
+
+<p align="center">
+    <img src="https://latex.codecogs.com/gif.latex?%5Ctheta%20%5E%7B%5Cleft%28n&plus;1%5Cright%29%7D%20%3D%20%5Ctheta%20%5E%7B%5Cleft%28n%5Cright%29%7D%20&plus;%20%5Cepsilon%20%5Cdelta%20%5Ctheta%20%5E%7B%5Cleft%28n%5Cright%29%7D%2C">
+</p>
+
+for a sufficiently small value of <img src="https://latex.codecogs.com/gif.latex?%5Cepsilon">.
+
 The remaining Lagrange multiplier associated to the volume constraint is computed in order to ensure the volume conservation,
 
 <p align="center">
