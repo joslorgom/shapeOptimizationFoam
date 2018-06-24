@@ -62,4 +62,18 @@ and the cost function descreases by choosing the normal displacement to the cont
     <img src="https://latex.codecogs.com/gif.latex?%5Cdelta%20%5Ctheta%20%5E%7B%5Cleft%28n%5Cright%29%7D%20%3D%20-%20%5Cleft%5B%20r%5E%7B%5Cleft%28n%5Cright%29%7D%20-%202%20%5Cnu%20S_%7Bij%7D%20%5Cleft%28%20%5Cmathbf%7Bv%7D%5E%7B%5Cleft%28n%5Cright%29%7D%20%5Cright%29%20%5C%2C%20n_j%5E%7B%5Cleft%28n%5Cright%29%7D%20%5C%20n_k%5E%7B%5Cleft%28n%5Cright%29%7D%20%5C%2C%20%5Cpartial_k%20u_i%5E%7B%5Cleft%28n%5Cright%29%7D%20%5Cright%5D.">
 </p>
 
+The remaining Lagrange multiplier associated to the volume constraint is computed in order to ensure the volume conservation,
+
+<p align="center">
+    <img src="https://latex.codecogs.com/gif.latex?r%5E%7B%5Cleft%28n%5Cright%29%7D%20%3D%20%5Cfrac%7B1%7D%7B%5Cleft%7C%20%5CGamma_s%20%5Cleft%28%20%5Ctheta%20%5Cright%20%29%20%5Cright%7C%7D%20%5Cint_%7B%5CGamma_s%20%5Cleft%28%20%5Ctheta%20%5Cright%20%29%7D%202%20%5Cnu%20S_%7Bij%7D%20%5Cleft%28%20%5Cmathbf%7Bv%7D%5E%7B%5Cleft%28n%5Cright%29%7D%20%5Cright%29%20n_j%5E%7B%5Cleft%28n%5Cright%29%7D%20n_k%5E%7B%5Cleft%28n%5Cright%29%7D%20%5Cpartial_k%20u_i%5E%7B%5Cleft%28n%5Cright%29%7D%20%5C%20%5Cmathrm%7Bd%7D%20%5CGamma.">
+</p>
+
+In summary, the shape optimization iteration is as follows:
+* Solve the primal problem.
+* Solve the adjoint problem with the previously computed state variables.
+* Compute the Lagrange multiplier for the volume constraint.
+* Compute the displacement field.
+* Update the displacement field of the previous iteration.
+* Perform the mesh motion.
+
 
