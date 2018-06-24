@@ -25,7 +25,6 @@ displacementLaplacianCoeffs
 {
     diffusivity     quadratic inversePointDistance (walls);
     //diffusivity     inversePointDistance (walls);
-    //diffusivity     quadratic inversePointDistance (deformedWall topWall bottomWall rightWall leftWall);
     //diffusivity  uniform;
 }
 */
@@ -34,15 +33,10 @@ motionSolver 	displacementSBRStress;
 
 displacementSBRStressCoeffs
 {
-    diffusivity  quadratic inverseDistance (walls);
+    //diffusivity  quadratic inverseDistance (walls);
+    diffusivity  quadratic inverseFaceDistance (walls);
+    //diffusivity  quadratic inversePointDistance(walls);
     // diffusivity  	uniform;
-    // diffusivity  	directional (1 200 0);
-    // diffusivity  	motionDirectional (1 1000 0);
-    // diffusivity  	file motionDiffusivity;
-    // diffusivity  	quadratic inverseFaceDistance (deformedWall);
-    // diffusivity  	quadratic inverseDistance (deformedWall);
-    //diffusivity  	quadratic inversePointDistance (deformedWall);
-    // diffusivity	inversePointDistance (deformedWall);
 }
 
 

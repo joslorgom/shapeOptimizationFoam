@@ -100,6 +100,10 @@ int main(int argc, char *argv[])
     //#include "CourantNo.H"
     /****************************************************************/
 
+    // Disable solver output
+    lduMatrix::debug = 0;
+    solverPerformance::debug = 0;
+
     turbulence->validate();
 
     /****************************************************************/
@@ -110,6 +114,7 @@ int main(int argc, char *argv[])
     scalar J = VGREAT;
     scalar dJ = wDrag*wLift;
     label count = 0;
+    label j = 1;
 
     std::ofstream file("results.csv");
 
@@ -125,6 +130,7 @@ int main(int argc, char *argv[])
 
 	Info << "Solving primal system..." << endl;
         // Pressure-velocity SIMPLE corrector
+	for (j = 1; j <= 20; j++)
         {
             #include "UEqn.H"
             #include "pEqn.H"
@@ -141,6 +147,7 @@ int main(int argc, char *argv[])
 
 	Info << "Solving adjoint system..." << endl;
         // Adjoint pressure-velocity SIMPLE corrector
+	for (j = 1; j<=20; j++)
         {
             #include "VEqn.H"
             #include "qEqn.H"

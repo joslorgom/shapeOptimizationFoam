@@ -15,28 +15,10 @@ FoamFile
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 3
 (
-/*
-inlet
-{
-    type patch;
-    physicalType inlet;
-    nFaces 134;
-    startFace 21254;
-}
-
-outlet
-{
-    type patch;
-    physicalType outlet;
-    nFaces 160;
-    startFace 21388;
-}
-*/
-
 inf
 {
     type patch;
-    physicalType patch;
+    physicalType inlet;
     nFaces 294;
     startFace 21254;
 }
