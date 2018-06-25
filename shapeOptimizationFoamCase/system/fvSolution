@@ -19,7 +19,8 @@ solvers
 {
     "(p|q)"
     {
-        solver          GAMG;
+        solver          GAMG; //PCG;
+	//preconditioner  DIC;
         tolerance       1e-08;
         relTol          0.1;
         smoother        GaussSeidel;
@@ -54,7 +55,8 @@ solvers
 
 SIMPLE
 {
-    nNonOrthogonalCorrectors 0;
+    nNonOrthogonalCorrectors 3;
+    //consistent	yes;
     pRefCell        0;
     pRefValue       0;
     qRefCell	    0;

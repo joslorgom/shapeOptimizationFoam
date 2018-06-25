@@ -32,7 +32,7 @@ Line(33) = {4, 8};
 Line(34) = {5, 9};
 
 Transfinite Line{11, 13, 21, 23} = 40;
-Transfinite Line{12, 14, 22, 24} = 40 Using Bump 5; 
+Transfinite Line{12, 14, 22, 24} = 30 Using Bump 0.25; // Using Bump 5 
 Transfinite Line{31, 32, 33, 34} = 140 Using Progression 1;
 
 Line Loop(51) = {31, 21, -32, -11};

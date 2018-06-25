@@ -19,6 +19,7 @@
     // Update the pressure BCs to ensure flux consistency
     constrainPressure(q, V, psiHbyAa, rAtV());
 
+/*
     // Non-orthogonal pressure corrector loop
     while (simple.correctNonOrthogonal())
     {
@@ -36,6 +37,20 @@
             psi = psiHbyAa - qEqn.flux();
         }
     }
+*/
+
+        fvScalarMatrix qEqn
+        (
+            fvm::laplacian(rAtV(), q) == fvc::div(psiHbyAa)
+        );
+
+        qEqn.setReference(qRefCell, qRefValue);
+
+        qEqn.solve();
+
+        psi = psiHbyAa - qEqn.flux();
+
+
 
     #include "adjointContinuityErrs.H"
 

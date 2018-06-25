@@ -84,4 +84,52 @@ In summary, the shape optimization iteration is as follows:
 * Update the displacement field of the previous iteration.
 * Perform the mesh motion.
 
+## Getting Started
 
+The solver must be compiled in the terminal. It is advisable to first clean previous compilations with
+
+```
+wclean
+```
+
+and then use
+
+```
+wmake
+```
+
+### Prerequisites
+
+OpenFOAM C++ library must be installed in order to compile the code.
+
+The OpenFOAM distribution provided by the [OpenFOAM Foundation](https://openfoam.org/) was used.
+
+## Running a Case
+
+In order to run the solver move to the case folder _shapeOptimizationFoam_ and type in the command line
+
+```
+./Allprepare
+
+shapeOptimizationFoam
+```
+
+### Warning
+
+It might be needed to use 
+
+```
+sed -i -e 's/\r$//' filename
+```
+
+and
+
+```
+chmod +x filename
+```
+
+in order to be able to execute 
+
+```
+./filename
+```
