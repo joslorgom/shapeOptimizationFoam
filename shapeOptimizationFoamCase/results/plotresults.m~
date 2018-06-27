@@ -1,0 +1,35 @@
+clc;
+clear all;
+close all;
+
+rho = 1;
+w = 0.01;
+h = 0.1;
+
+U1 = 1e-3;
+U2 = 1e-1;
+U3 = 10;
+
+Fad = 0.5*rho*U^2*w*h;
+
+
+A1 = csvread('Re10/Re10.csv', 1);
+A1 = A1(1:5000, :);
+F1 = 0.5*rho*U1^2*w*h;
+
+A3 = csvread('Re1000/Re1000.csv', 1);
+A3 = A3(1:5550, :);
+F3 = 0.5*rho*U3^2*w*h;
+
+A1 = csvread('Re10/Re10.csv', 1);
+A1 = A1(1:5000, :);
+F1 = 0.5*rho*U1^2*w*h;
+
+figure(1)
+semilogy(A(:, 1), A(:, 3)/Fad, 'r')
+hold on
+%loglog(A(:, 1), abs(A(:, 4)), 'b')
+%loglog(A(:, 1), abs(A(:, 2)), 'g')
+
+figure(2)
+semilogy(A(:, 1), A(:, 5), 'r')

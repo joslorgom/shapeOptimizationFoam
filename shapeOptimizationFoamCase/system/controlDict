@@ -68,6 +68,31 @@ functions
 		rhoInf	1;
 		CofR	(0 0 0);
 	}
+
+	forces_coeffs
+	    {
+		type            forceCoeffs;
+		libs            ("libforces.so");
+		enabled		true;
+		writeControl    timeStep;
+		writeInterval   1;
+
+		patches
+		(
+		    walls
+		);
+
+		log         true;
+		rho	    rhoInf;
+		rhoInf      1;
+		CofR        (0 0 0);
+		liftDir     (0 1 0);
+		dragDir     (1 0 0);
+		pitchAxis   (0 0 1);
+		magUInf     1e-3;
+		lRef        0.1;
+		Aref        0.001;
+	    }
 }
 
 

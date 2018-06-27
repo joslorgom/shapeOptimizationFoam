@@ -17,7 +17,7 @@ FoamFile
 dimensions      [0 1 -1 0 0 0 0];
 
 velocity_0	uniform (25.75 3.62 0);
-velocity	uniform (10 0 0);
+velocity	uniform (0.1 0 0);
 
 internalField   $velocity;
 

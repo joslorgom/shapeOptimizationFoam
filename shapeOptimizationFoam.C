@@ -117,6 +117,7 @@ int main(int argc, char *argv[])
     label j = 1;
 
     std::ofstream file("results.csv");
+    file << "Iteration, Cost, Drag, Lift, Volume, Fx, Fy, Fz" << nl;
 
     Info << "\nStarting loop\n" << endl;
 
@@ -163,7 +164,7 @@ int main(int argc, char *argv[])
 	volField = mesh.V();
 	volSum = gSum(volField);
 
-      	file << runTime.value() << "," << J << "," << drag.value() << "," << lift.value() << "," << volSum << nl;
+      	file << runTime.value() << "," << J << "," << drag.value() << "," << lift.value() << "," << volSum << "," << fSum.component(0) << "," << fSum.component(1) << "," << fSum.component(2) << nl;
 
 	//surfSens = fvc::interpolate ( ( fvc::grad(p) - nu * fvc::div( twoSymm (fvc::grad(U)) ) )  & ( wDrag*dragDir + wLift*liftDir ) );
 	surfSens = ( ( - nu * ( fvc::interpolate( twoSymm(fvc::grad(V)) ) & ( mesh.Sf() ) / mesh.magSf() ) ) & fvc::snGrad(U) );
@@ -185,11 +186,10 @@ int main(int argc, char *argv[])
 	Info << "Domain volume is " << gSum(volField) << endl;
 
         runTime.write();
-/*
+
         Info<< "ExecutionTime = " << runTime.elapsedCpuTime() << " s"
             << "  ClockTime = " << runTime.elapsedClockTime() << " s"
             << nl << endl;
-*/
     }
 
     file.close();
