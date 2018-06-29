@@ -138,6 +138,14 @@ In order to run the solver move to the case folder _shapeOptimizationFoamCase_ a
 shapeOptimizationFoam
 ```
 
+The solver has been run for three different Reynolds numbers and the cost functional value has been normalized with
+
+<p align="center">
+    <img src="https://latex.codecogs.com/gif.latex?%5Cfrac%7B1%7D%7B2%7D%20%5Crho%20U_%7B%5Cinfty%7D%5E2%20D%20e">
+</p>
+
+where <img src="https://latex.codecogs.com/gif.latex?D"> and <img src="https://latex.codecogs.com/gif.latex?e"> are the cylinder diameter and thickness, respectively.
+
 <p align="center">
     <img src="/shapeOptimizationFoamCase/figs/fig2.png">
 </p>
