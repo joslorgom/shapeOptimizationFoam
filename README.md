@@ -138,6 +138,10 @@ In order to run the solver move to the case folder _shapeOptimizationFoamCase_ a
 shapeOptimizationFoam
 ```
 
+<p align="center">
+    <img src="/shapeOptimizationFoamCase/figs/fig2.png">
+</p>
+
 ### Warning
 
 It might be needed to use 
